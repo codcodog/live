@@ -11,7 +11,7 @@ if ( ! $is_curl) {
 }
 
 $i = 0;
-header('X-Accel-Buffering: no');
+header('X-Accel-Buffering: no'); # Nginx 服务器，禁止缓存；Apache 则不用.
 while (true) {
     $j = $i % 10;
     $cont = file_get_contents("./frames/{$j}.txt");
