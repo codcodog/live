@@ -1,4 +1,15 @@
 <?php
+
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+$url        = 'https://github.com/codcodog/live';
+$pattern    = '*curl*';
+$is_curl    = preg_match($pattern, $user_agent);
+
+if ( ! $is_curl) {
+    header("Location: $url");
+    exit;
+}
+
 $i = 0;
 header('X-Accel-Buffering: no');
 while (true) {
