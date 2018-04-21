@@ -9,5 +9,5 @@ while (true) {
     @ob_end_flush();
     flush();
     $i++;
-    usleep(70000);
+    usleep(60000);
 }
